@@ -1,0 +1,22 @@
+<h1>IdeaBox</h1>
+<%= erb :form, locals: {idea: idea} %>
+
+<h3>Existing Ideas</h3>
+<ul>
+  <% ideas.each do |idea| %>
+    <li>
+      Idea Title: <%= idea.title %><br />
+      Idea Description: <%= idea.description %><br />
+      Idea Tags: <%= idea.tags %><br />
+      <form action="/<%= idea.id %>" method="POST" style="display: inline">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+        <a href="/<%= idea.id %>/edit">Edit</a>
+      </form>
+      <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+        <input type='submit' value="Vote Up"/>
+      </form><br />
+    </li><br />
+  <% end %>
+</ul>
+
