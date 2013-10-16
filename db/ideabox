@@ -1,9 +1,9 @@
 ---
 ideas:
 - title: more ideas
-  description: ideas
-  rank: 6
-  tags: tags, tags, tags
+  description: more ideas
+  rank: 2
+  tags: tags, test
 - title: this idea
   description: description of idea
   tags: tag one, tag two, tag three
@@ -13,3 +13,6 @@ ideas:
 - title: name
   description: james
   tags: names
+- title: an idea
+  description: the idea description
+  tags: ideas for days, haha, poop
