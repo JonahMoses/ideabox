@@ -1,2 +1,20 @@
-<h1>IdeaBox</h1>
-<%= erb :form, locals: {idea: idea, id: idea.id, tags: idea.tags} %>
+<form action='/<%= idea.id %>' method='POST'>
+
+  <p>
+    <% if idea.id %>
+      <h3>Edit your idea:</h3><br />
+      Idea Title:
+      <input style="margin-left: 62px; width: 400px" type='text' name='idea[title]' value="<%= idea.title %>" /><br /><br />
+      Idea Description:
+      <input style="margin-left: 15px; width: 400px" type="text" name='idea[description]'value="<%= idea.description %>" /><br/><br />
+      Idea Tags:
+      <input style="margin-left: 56px; width: 400px" type='text' name='idea[tags]' value="<%= idea.tags %>" /><br /><br />
+    <% else %>
+    <% end %>
+  </p>
+
+  <% if idea.id %>
+    <input type="hidden" name="_method" value="PUT" />
+  <% end %>
+  <input type='submit'/>
+</form>

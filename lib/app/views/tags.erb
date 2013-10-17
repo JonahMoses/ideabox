@@ -1,14 +1,24 @@
-<h1>IdeaBox Tags</h1>
+<% if tag == "all" %>
 
-  <% tags.each do |tag| %>
+  <h3>In Use Tags:</h3>
+    <% tags.each do |tag| %>
+      <div>
+        <h3><a href="/tags/<%= tag %>"><%= tag.upcase %></a></h3>
 
-  <h3>Tag: <%= tag %></h3>
+        <div>
+          <font style="margin-left: 15px">Ideas With This Tag:</font>
 
-  Ideas With This Tag:
+          <% ideas.tag_hash[tag].each do |idea| %>
+            <li style="margin-left: 25px"><%= idea.title %></li>
+          <% end %>
+
+        </div>
+      </div>
+    <% end %>
+<% else %>
+<h1>Ideas With This Tag:</h1><br />
   <% ideas.tag_hash[tag].each do |idea| %>
-    <ul>
-    <li><%= idea.title %></li>
-    </ul>
-
+    <%= erb :idea, locals: {idea: idea} %>
+    <br />
   <% end %>
-  <% end %>
+<% end %>

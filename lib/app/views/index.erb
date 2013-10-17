@@ -1,12 +1,14 @@
-<h1>IdeaBox</h1>
-<%= erb :form, locals: {idea: idea} %>
+<h3>In Use Tags:</h3>
+<% tags.each do |tag| %>
+<a href="/tags/<%= tag %>"><%= tag %></a>
+<% end %>
 
-<h3>Existing Ideas</h3>
-Used Tags: <br /><%= tags.join(', ') %><br />
+
 <form method="get" action='/tags'>
-  <input type='submit' value="All Tags">
-</form>
+  <br /><input type='submit' value="View All Tags"><br />
+</form><hr>
 
+<h3>Existing Ideas:</h3>
 <ul>
 <br />
   <% ideas.each do |idea| %>

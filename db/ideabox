@@ -3,10 +3,11 @@ ideas:
 - title: Best Idea
   description: This is the best idea
   rank: 0
-  tags: best, idea, better than you
+  tags: best, idea
 - title: Good Idea
   description: This is a better than average idea
-  tags: good, idea, above average
+  rank: 0
+  tags: good, idea
 - title: Average Idea
   description: This is an average idea
   rank: 0
@@ -17,3 +18,10 @@ ideas:
 - title: Bad Idea
   description: This is a bad idea
   tags: bad, idea
+- title: ''
+  description: ''
+  tags: ''
+- title: this is an idea
+  description: that is shitty
+  rank: 0
+  tags: ok, shitty, idea
