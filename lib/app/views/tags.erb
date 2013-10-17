@@ -1,0 +1,14 @@
+<h1>IdeaBox Tags</h1>
+
+  <% tags.each do |tag| %>
+
+  <h3>Tag: <%= tag %></h3>
+
+  Ideas With This Tag:
+  <% ideas.tag_hash[tag].each do |idea| %>
+    <ul>
+    <li><%= idea.title %></li>
+    </ul>
+
+  <% end %>
+  <% end %>

@@ -33,5 +33,6 @@ PLATFORMS
 
 DEPENDENCIES
   pry
+  rack-test
   sinatra
   sinatra-contrib

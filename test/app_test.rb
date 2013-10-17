@@ -8,18 +8,17 @@ class AppTest < Minitest::Test
   include Rack::Test::Methods
 
   def app
-    IdeaboxApp
+    IdeaBoxApp
   end
 
-  def test_hello
+  def test_it_exists
+    assert IdeaBoxApp
+  end
+
+  def test_ideabox
     get '/'
-    assert_equal "Hello, world", last_response.body
+    assert (last_response.body =~ /Your Idea:/)
   end
 
-  # def test_create_new_idea
-  #   post '/', {idea: {title: "exercise", description: "sign up for yoga"}}
-  #   idea = IdeaStore.all.first
-  #   assert_equal "exercise", idea.title
-  #   assert_equal "sign up for yoga", idea.description
-  # end
+
 end

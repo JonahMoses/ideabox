@@ -12,7 +12,7 @@ class Idea
     @description = attributes["description"]
     @rank        = attributes["rank"] || 0
     @id          = attributes["id"]
-    @tags        = attributes["tags"]
+    @tags        = attributes["tags"] || "no tag"
   end
 
   def save

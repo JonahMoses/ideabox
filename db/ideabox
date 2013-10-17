@@ -1,21 +1,19 @@
 ---
 ideas:
-- title: durr
-  description: idea
-  rank: 1
-  tags: one tag, two tag
-- title: this idea
-  description: description of idea
+- title: Best Idea
+  description: This is the best idea
   rank: 0
-  tags: tag one, tag two, tag three
-- title: Kevin
-  description: is funny
+  tags: best, idea, better than you
+- title: Good Idea
+  description: This is a better than average idea
+  tags: good, idea, above average
+- title: Average Idea
+  description: This is an average idea
   rank: 0
-  tags: this is one tag, this is the second tag
-- title: name
-  description: james
-  rank: 0
-  tags: names
-- title: testing
-  description: this
-  tags: tags, method
+  tags: decent, idea, average
+- title: Below Average Idea
+  description: This is a lower than average idea
+  tags: below average, idea
+- title: Bad Idea
+  description: This is a bad idea
+  tags: bad, idea

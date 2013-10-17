@@ -5,7 +5,11 @@ class IdeaStore
   def self.database
     return @database if @database
 
-    @database ||= YAML::Store.new('db/ideabox')
+    if ENV['RACK_ENV'] == 'test'
+      @database = YAML::Store.new "db/ideabox_test"
+    else
+      @database = YAML::Store.new "db/ideabox"
+    end
     @database.transaction do
       @database['ideas'] ||= []
     end
@@ -18,6 +22,12 @@ class IdeaStore
       ideas << Idea.new(data.merge("id" => i))
     end
     ideas
+  end
+
+  def self.destroy_database
+    database.transaction do |db|
+      db["ideas"] = []
+    end
   end
 
   def self.raw_ideas
@@ -59,11 +69,18 @@ class IdeaStore
   def self.all_tags
     all_tags = []
     all.each do |idea|
-      idea.tags.split(',').each do |tag|
+      idea.tags.split(', ').each do |tag|
         all_tags << tag
       end
     end
-    all_tags.uniq.join(', ')
+    all_tags.uniq
   end
+
+  def self.tag_hash
+    all_tags.each_with_object({}) do |tag, hash|
+      hash[tag] = all.select {|idea| idea.to_h["tags"].include? tag}
+    end
+  end
+
 
 end

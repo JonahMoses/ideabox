@@ -2,22 +2,30 @@
 <%= erb :form, locals: {idea: idea} %>
 
 <h3>Existing Ideas</h3>
-Used Tags: <br /><%= tags %><br />
+Used Tags: <br /><%= tags.join(', ') %><br />
+<form method="get" action='/tags'>
+  <input type='submit' value="All Tags">
+</form>
+
 <ul>
 <br />
   <% ideas.each do |idea| %>
     <li>
       Title: <%= idea.title %><br />
       Description: <%= idea.description %><br />
-      Tags: <%= idea.tags %><br />
+      Tags:
+      <%= idea.tags %><br />
+
       <form action="/<%= idea.id %>" method="POST" style="display: inline">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete"/>
         <input type="button" value="Edit" onClick="window.location.href='/<%= idea.id %>/edit'">
       </form>
+
       <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
         <input type='submit' value="Vote Up"/>
       </form><br />
+
     </li><br />
   <% end %>
 </ul>
