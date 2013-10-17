@@ -12,7 +12,13 @@ ideas:
   tags: funny kevin, jokes for days, hahahahah, this is great
 - title: name
   description: james
-  tags: names
+  rank: 0
+  tags: names, multiple, names
 - title: an idea
   description: the idea description
+  rank: 1
   tags: ideas for days, haha, poop
+- title: hey new idea
+  description: this idea is a crappy idea
+  rank: 3
+  tags: crap, ok, good
