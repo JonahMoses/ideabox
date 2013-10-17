@@ -65,4 +65,5 @@ class IdeaStore
     end
     all_tags
   end
+
 end
