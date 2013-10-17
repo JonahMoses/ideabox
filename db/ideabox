@@ -1,18 +1,9 @@
 ---
 ideas:
-<<<<<<< HEAD
-- !ruby/object:Idea
-  title: more ideas
-  description: more ideas
-  rank: 1
-  id: 0
-  tags: poop
-=======
 - title: durr
   description: idea
   rank: 1
   tags: blah
->>>>>>> f27fe75
 - title: this idea
   description: description of idea
   rank: 0
