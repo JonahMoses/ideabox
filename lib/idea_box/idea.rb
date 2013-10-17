@@ -32,10 +32,6 @@ class Idea
     @rank += 1
   end
 
-  def tags
-    @tags
-  end
-
   def <=>(other)
     other.rank <=> rank
   end
