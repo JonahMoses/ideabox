@@ -3,22 +3,13 @@ ideas:
 - title: durr
   description: idea
   rank: 1
-  tags: blah
+  tags: nope
 - title: this idea
   description: description of idea
-  rank: 0
+  tags: tag one, tag two, tag three
 - title: Kevin
   description: is funny
-  rank: 0
+  tags: funny kevin, jokes for days, hahahahah, this is great
 - title: name
   description: james
-  rank: 0
-- title: an idea
-  description: the idea description
-  rank: 0
-- title: hey new idea
-  description: this idea is a crappy idea
-  rank: 0
-- title: b
-  description: b
-  rank: 0
+  tags: names
