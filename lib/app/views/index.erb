@@ -2,7 +2,9 @@
 <%= erb :form, locals: {idea: idea} %>
 
 <h3>Existing Ideas</h3>
-Used Tags: <%= tags %>
+<h4>Used Tags:</h4>
+<%= tags %>
+<br />
 <ul>
   <% ideas.each do |idea| %>
     <li>

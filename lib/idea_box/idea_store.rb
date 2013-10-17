@@ -63,7 +63,7 @@ class IdeaStore
         all_tags << tag
       end
     end
-    all_tags
+    all_tags.uniq.join(', ')
   end
 
 end

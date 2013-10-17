@@ -28,6 +28,10 @@ class Idea
     }
   end
 
+  def idea_tags
+    @tags.split(',')
+  end
+
   def like!
     @rank += 1
   end
