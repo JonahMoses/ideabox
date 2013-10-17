@@ -44,12 +44,7 @@ class IdeaStore
   end
 
   def self.update(id, data)
-<<<<<<< HEAD
-    # idea = IdeaStore.find(id)
-    # new_idea_info = idea.to_h.merge(data)
-=======
     idea = IdeaStore.find(id)
->>>>>>> f27fe75
     database.transaction do
       database['ideas'][id] = idea.to_h.merge(data)
     end
@@ -61,27 +56,6 @@ class IdeaStore
     end
   end
 
-<<<<<<< HEAD
-  # def self.all_tags
-    # all.collect do |idea|
-    #   idea.tags.collect do |tag|
-    #     tag
-    #   end
-    # end.flatten.uniq.sort
-  # end
-
-  # def self.find_all_by_tag(tag)
-  #   all.find_all { |idea| idea.tags.include? tag }
-  # end
-
-  # def self.group_by_tags
-  #   tags.each_with_object({}) do |tag, group|
-  #     group[tag] = find_all_by_tag(tag)
-  #   end
-  # end
-
-
-=======
   def self.all_tags
     all_tags = []
     all.each do |idea|
@@ -91,5 +65,4 @@ class IdeaStore
     end
     all_tags
   end
->>>>>>> f27fe75
 end
