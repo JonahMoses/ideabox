@@ -2,8 +2,9 @@
 <%= erb :form, locals: {idea: idea} %>
 
 <h3>Existing Ideas</h3>
-Used Tags: <%= tags %>
+Used Tags: <br /><%= tags %><br />
 <ul>
+<br />
   <% ideas.each do |idea| %>
     <li>
       Title: <%= idea.title %><br />
@@ -12,7 +13,7 @@ Used Tags: <%= tags %>
       <form action="/<%= idea.id %>" method="POST" style="display: inline">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="delete"/>
-        <a href="/<%= idea.id %>/edit">Edit</a>
+        <input type="button" value="Edit" onClick="window.location.href='/<%= idea.id %>/edit'">
       </form>
       <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
         <input type='submit' value="Vote Up"/>

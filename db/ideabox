@@ -1,15 +1,13 @@
 ---
 ideas:
-- title: durr
-  description: idea
-  rank: 1
-  tags: nope
-- title: this idea
-  description: description of idea
-  tags: tag one, tag two, tag three
-- title: Kevin
-  description: is funny
-  tags: funny kevin, jokes for days, hahahahah, this is great
-- title: name
-  description: james
-  tags: names
+- title: you
+  description: are funny
+  rank: 2
+  tags: jokes for days, hahahahah, this is great
+- title: first names
+  description: james, bob, jones, jim, frank
+  rank: 2
+  tags: naming
+- title: swimming
+  description: i like to swim
+  tags: swimming, activity
