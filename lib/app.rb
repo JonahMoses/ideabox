@@ -43,4 +43,8 @@ class IdeaBoxApp < Sinatra::Base
     redirect '/'
   end
 
+  # get '/tags' do
+  #   ideas = IdeaStore.all
+  # end
+
 end

@@ -1,24 +1,26 @@
 ---
 ideas:
-- title: more ideas
+- !ruby/object:Idea
+  title: more ideas
   description: more ideas
-  rank: 2
-  tags: tags, test
+  rank: 1
+  id: 0
+  tags: poop
 - title: this idea
   description: description of idea
-  tags: tag one, tag two, tag three
+  rank: 0
 - title: Kevin
   description: is funny
-  tags: funny kevin, jokes for days, hahahahah, this is great
+  rank: 0
 - title: name
   description: james
   rank: 0
-  tags: names, multiple, names
 - title: an idea
   description: the idea description
-  rank: 1
-  tags: ideas for days, haha, poop
+  rank: 0
 - title: hey new idea
   description: this idea is a crappy idea
-  rank: 6
-  tags: crap, ok, good
+  rank: 0
+- title: b
+  description: b
+  rank: 0

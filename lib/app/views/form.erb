@@ -11,6 +11,10 @@
   <% end %>
   Idea Title:<input type='text' name='idea[title]' value="<%= idea.title %>"/><br/>
   Idea Description:<textarea style="height: 2em" name='idea[description]'><%= idea.description %></textarea><br/>
+  <% if idea.id %>
   Idea Tags:<input type='text' name='idea[tags]' value="<%= idea.tags %>" /><br />
+  <% else %>
+  Idea Tags:<input type='text' name='idea[tags]' value="" /><br />
+  <% end %>
   <input type='submit'/>
 </form>
