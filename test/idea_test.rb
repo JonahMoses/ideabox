@@ -1,3 +1,4 @@
+ENV['RACK_ENV'] = 'test'
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
@@ -15,11 +16,11 @@ class IdeaTest < Minitest::Test
   end
 
   def test_it_has_a_data_hash_with_data_passed_in
-    idea = Idea.new("title" => "dinner", "description" => "chicken BBQ", "id" => "1", "tags" => "tag")
-    expected = {"title" => "dinner", "description" => "chicken BBQ", "rank" => 0, "tags" => "tag" }
+    idea = Idea.new("title" => "dinner", "description" => "chicken BBQ", "id" => "1", "tags" => "tag", "created_at" => "Time",  "updated_at" => "Updated"  )
+    expected = {"title" => "dinner", "description" => "chicken BBQ", "rank" => 0, "tags" => "tag", "created_at" => "Time", "updated_at" => "Updated" }
     assert_equal expected, idea.to_h
     idea.like!
-    expected2 = {"title" => "dinner", "description" => "chicken BBQ", "rank" => 1, "tags" => "tag" }
+    expected2 = {"title" => "dinner", "description" => "chicken BBQ", "rank" => 1, "tags" => "tag", "created_at" => "Time", "updated_at" => "Updated"  }
     assert_equal expected2, idea.to_h
   end
 
@@ -47,5 +48,11 @@ class IdeaTest < Minitest::Test
     bad_idea.like!
     assert_equal 1, idea.<=>(bad_idea)
   end
+
+  def test_it_has_a_created_at_timestamp
+    idea = Idea.new("created_at" => "2013-10-17 16:44:01 -0600")
+    assert_equal "2013-10-17 16:44:01 -0600", idea.created_at
+  end
+
 
 end

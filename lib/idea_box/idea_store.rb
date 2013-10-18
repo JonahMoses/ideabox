@@ -61,8 +61,9 @@ class IdeaStore
   end
 
   def self.create(data)
+    new_idea = Idea.new(data)
     database.transaction do
-      database['ideas'] << data
+      database['ideas'] << new_idea.to_h
     end
   end
 

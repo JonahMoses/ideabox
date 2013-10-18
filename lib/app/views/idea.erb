@@ -1,7 +1,9 @@
 <div>
-  <b>Idea Title:</b><font style="margin-left: 63px"><%= idea.title %></font><br />
-  <b>Idea Description:</b><font style="margin-left: 15px"><%= idea.description %></font><br />
-  <b>Idea Tags:</b><font style="margin-left: 60px"><%= idea.tags %></font>
+  <b>Idea Title:</b><font style="margin-left: 123px"><%= idea.title %></font><br />
+  <b>Idea Description:</b><font style="margin-left: 75px"><%= idea.description %></font><br />
+  <b>Idea Tags:</b><font style="margin-left: 120px"><%= idea.tags %></font><br />
+  <b>Idea Was Created At:</b><font style="margin-left: 49px"><%= idea.created_at.strftime('%A, %D') %></font><br />
+  <b>Idea Was Last Updated At:</b><font style="margin-left: 10px"><%= idea.updated_at.strftime('%A, %D') %></font>
 </div>
 <input type="button" value="Edit Idea" onClick="window.location.href ='/<%= idea.id %>/edit'">
 <br />

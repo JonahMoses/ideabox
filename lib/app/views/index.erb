@@ -13,11 +13,11 @@
 <br />
   <% ideas.each do |idea| %>
     <li>
-      Title: <%= idea.title %><br />
-      Description: <%= idea.description %><br />
-      Tags:
-      <%= idea.tags %><br />
-
+      <b>Title:</b> <font style="margin-left: 85px"><%= idea.title %></font><br />
+      <b>Description:</b> <font style="margin-left: 37px"><%= idea.description %></font><br />
+      <b>Tags:</b> <font style="margin-left: 82px"><%= idea.tags %></font><br />
+      <b>Created At:</b> <font style="margin-left: 45px"><%= idea.created_at.strftime('%A, %D') %></font><br />
+      <b>Updated Last At:</b> <font style="margin-left: 7px"><%= idea.updated_at.strftime('%A, %D') %></font><br />
       <form action="/<%= idea.id %>" method="POST" style="display: inline">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete"/>

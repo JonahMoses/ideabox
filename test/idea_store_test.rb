@@ -103,4 +103,6 @@ class IdeaStoreTest < Minitest::Test
     assert_equal 2, IdeaStore.tag_hash["no tag"].count
   end
 
+
+
 end

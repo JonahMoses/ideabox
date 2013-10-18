@@ -2,26 +2,40 @@
 ideas:
 - title: Best Idea
   description: This is the best idea
-  rank: 0
-  tags: best, idea
+  rank: 3
+  tags: best, idea, ever
+  created_at: 2013-10-17 17:18:03.000000000 -06:00
+  updated_at: 2013-10-17 17:55:49.000000000 -06:00
 - title: Good Idea
   description: This is a better than average idea
   rank: 0
-  tags: good, idea
+  tags: good, idea, nice, it works
+  created_at: 2013-10-17 17:18:13.000000000 -06:00
+  updated_at: 2013-10-17 17:26:15.000000000 -06:00
 - title: Average Idea
   description: This is an average idea
   rank: 0
   tags: decent, idea, average
+  created_at: 2013-10-17 17:18:24.000000000 -06:00
 - title: Below Average Idea
   description: This is a lower than average idea
+  rank: 1
   tags: below average, idea
+  created_at: 2013-10-17 17:18:34.000000000 -06:00
+  updated_at: 2013-10-17 17:55:34.000000000 -06:00
 - title: Bad Idea
   description: This is a bad idea
+  rank: 0
   tags: bad, idea
-- title: ''
-  description: ''
-  tags: ''
+  created_at: 2013-10-17 17:18:38.000000000 -06:00
 - title: this is an idea
   description: that is shitty
   rank: 0
-  tags: ok, shitty, idea
+  tags: ok, idea
+  created_at: 2013-10-17 17:18:42.000000000 -06:00
+- title: time
+  description: it was created?
+  rank: 0
+  tags: hello, timing, more timing
+  created_at: 2013-10-17 17:18:45.000000000 -06:00
+  updated_at: 2013-10-17 17:29:09.000000000 -06:00

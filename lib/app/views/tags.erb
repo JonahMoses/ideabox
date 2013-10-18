@@ -4,14 +4,11 @@
     <% tags.each do |tag| %>
       <div>
         <h3><a href="/tags/<%= tag %>"><%= tag.upcase %></a></h3>
-
         <div>
           <font style="margin-left: 15px">Ideas With This Tag:</font>
-
           <% ideas.tag_hash[tag].each do |idea| %>
             <li style="margin-left: 25px"><%= idea.title %></li>
           <% end %>
-
         </div>
       </div>
     <% end %>
