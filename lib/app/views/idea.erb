@@ -1,9 +1,60 @@
-<div>
-  <b>Idea Title:</b><font style="margin-left: 123px"><%= idea.title %></font><br />
-  <b>Idea Description:</b><font style="margin-left: 75px"><%= idea.description %></font><br />
-  <b>Idea Tags:</b><font style="margin-left: 120px"><%= idea.tags %></font><br />
-  <b>Idea Was Created At:</b><font style="margin-left: 49px"><%= idea.created_at.strftime('%A, %D') %></font><br />
-  <b>Idea Was Last Updated At:</b><font style="margin-left: 10px"><%= idea.updated_at.strftime('%A, %D') %></font>
-</div>
-<input type="button" value="Edit Idea" onClick="window.location.href ='/<%= idea.id %>/edit'">
-<br />
+<% unless '/:id/info?' %>
+
+  <b>Title:</b> <%= idea.title %><br />
+  <b>Description:</b> <%= idea.description %><br />
+  <b>Tags:</b> <%= idea.tags %><br />
+  <b>Created At:</b> <%= idea.created_at.strftime('%A, %D') %><br />
+  <b>Updated Last At:</b> <%= idea.updated_at.strftime('%A, %D') %><br />
+  <b>Current Vote Rank:</b> <%= idea.rank %><br />
+
+  <form action="/<%= idea.id %>" method="POST" style="display: inline">
+    <input type="hidden" name="_method" value="DELETE">
+    <input class="btn btn-sm btn-danger" type="submit" value="Delete"/>
+    <input class="btn btn-sm btn-warning" type="button" value="Edit" onClick="window.location.href='/<%= idea.id %>/edit'">
+  </form>
+
+  <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+    <button class="btn btn-sm btn-success" type='submit' value="Vote Up"/>
+      Vote Up <span class="glyphicon glyphicon-thumbs-up"></span>
+    </button>
+  </form>
+
+  <form action='/<%= idea.id %>/dislike' method='POST' style="display: inline">
+    <button class="btn btn-sm btn-success" type='submit' value="Vote Down"/>
+      Vote Down <span class="glyphicon glyphicon-thumbs-down"></span>
+    </button>
+  </form>
+
+<% else %>
+
+  <b>Title:</b> <%= idea.title %><br />
+  <b>Description:</b> <%= idea.description %><br />
+  <b>Tags:</b> <%= idea.tags %><br />
+  <b>Created At:</b> <%= idea.created_at.strftime('%A, %D') %><br />
+  <b>Updated Last At:</b> <%= idea.updated_at.strftime('%A, %D') %><br />
+  <b>Current Vote Rank:</b> <%= idea.rank %><br />
+
+  <form action="/<%= idea.id %>" method="POST" style="display: inline">
+    <input type="hidden" name="_method" value="DELETE">
+    <input class="btn btn-sm btn-danger" type="submit" value="Delete"/>
+    <input class="btn btn-sm btn-warning" type="button" value="Edit" onClick="window.location.href='/<%= idea.id %>/edit'">
+  </form>
+
+  <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+    <button class="btn btn-sm btn-success" type='submit' value="Vote Up"/>
+      Vote Up <span class="glyphicon glyphicon-thumbs-up"></span>
+    </button>
+  </form>
+
+  <form action='/<%= idea.id %>/dislike' method='POST' style="display: inline">
+    <button class="btn btn-sm btn-success" type='submit' value="Vote Down"/>
+      Vote Down <span class="glyphicon glyphicon-thumbs-down"></span>
+    </button>
+  </form>
+
+  <form action='/<%= idea.id %>/info' method='get' style="display: inline">
+    <input class="btn btn-sm btn-primary" type='submit' value="View Details"/>
+    <br />
+  </form>
+
+<% end %>

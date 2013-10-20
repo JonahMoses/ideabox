@@ -1,34 +1,12 @@
-<h3>In Use Tags:</h3>
-<% tags.each do |tag| %>
-<a href="/tags/<%= tag %>"><%= tag %></a>
-<% end %>
-
-
-<form method="get" action='/tags'>
-  <br /><input type='submit' value="View All Tags"><br />
-</form><hr>
-
 <h3>Existing Ideas:</h3>
-<ul>
 <br />
-  <% ideas.each do |idea| %>
-    <li>
-      <b>Title:</b> <font style="margin-left: 85px"><%= idea.title %></font><br />
-      <b>Description:</b> <font style="margin-left: 37px"><%= idea.description %></font><br />
-      <b>Tags:</b> <font style="margin-left: 82px"><%= idea.tags %></font><br />
-      <b>Created At:</b> <font style="margin-left: 45px"><%= idea.created_at.strftime('%A, %D') %></font><br />
-      <b>Updated Last At:</b> <font style="margin-left: 7px"><%= idea.updated_at.strftime('%A, %D') %></font><br />
-      <form action="/<%= idea.id %>" method="POST" style="display: inline">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Delete"/>
-        <input type="button" value="Edit" onClick="window.location.href='/<%= idea.id %>/edit'">
-      </form>
-
-      <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
-        <input type='submit' value="Vote Up"/>
-      </form><br />
-
-    </li><br />
-  <% end %>
-</ul>
+<% ideas.each do |idea| %>
+  <div>
+    <div class="col-lg-4">
+      <%= erb :idea, locals: {idea: idea} %>
+      <br />
+    </div>
+  </div>
+<% end %>
+<br />
 
