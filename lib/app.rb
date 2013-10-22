@@ -45,7 +45,7 @@ class IdeaBoxApp < Sinatra::Base
     idea = IdeaStore.find(id.to_i)
     idea.dislike!
     IdeaStore.update(id.to_i, idea.to_h)
-    redirect '/'
+    redirect "/#{idea.id}/info"
   end
 
   get '/tags' do
