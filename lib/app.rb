@@ -11,6 +11,7 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/' do
+
     erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new, tags: IdeaStore.all_tags}
   end
 
@@ -38,14 +39,14 @@ class IdeaBoxApp < Sinatra::Base
     idea = IdeaStore.find(id.to_i)
     idea.like!
     IdeaStore.update(id.to_i, idea.to_h)
-    redirect '/'
+    redirect '/:id/info'
   end
 
   post '/:id/dislike' do |id|
     idea = IdeaStore.find(id.to_i)
     idea.dislike!
     IdeaStore.update(id.to_i, idea.to_h)
-    redirect '/'
+    redirect '/:id/info'
   end
 
   get '/tags' do
@@ -58,7 +59,7 @@ class IdeaBoxApp < Sinatra::Base
 
   get '/:id/info' do |id|
     idea = IdeaStore.find(id.to_i)
-    erb :idea, locals: {idea: idea}
+    erb :idea, locals: {idea: idea, location: "not_front_page"}
   end
 
   get '/new_idea' do

@@ -16,7 +16,7 @@
 
   <h1>Ideas With This Tag:</h1><br />
   <% ideas.tag_hash[tag].each do |idea| %>
-    <%= erb :idea, locals: {idea: idea} %>
+    <%= erb :idea, locals: {idea: idea, location: "front_page"} %>
     <br />
   <% end %>
 

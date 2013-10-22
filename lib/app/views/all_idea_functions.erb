@@ -1,0 +1,17 @@
+<form action="/<%= idea.id %>" method="POST" style="display: inline">
+  <input type="hidden" name="_method" value="DELETE">
+  <input class="btn btn-sm btn-danger" type="submit" value="Delete"/>
+  <input class="btn btn-sm btn-warning" type="button" value="Edit" onClick="window.location.href='/<%= idea.id %>/edit'">
+</form>
+
+<form action='/<%= idea.id %>/like' method='POST' style="display: inline">
+  <button class="btn btn-sm btn-success" type='submit' value="Vote Up"/>
+    Vote Up <span class="glyphicon glyphicon-thumbs-up"></span>
+  </button>
+</form>
+
+<form action='/<%= idea.id %>/dislike' method='POST' style="display: inline">
+  <button class="btn btn-sm btn-success" type='submit' value="Vote Down"/>
+    Vote Down <span class="glyphicon glyphicon-thumbs-down"></span>
+  </button>
+</form>
