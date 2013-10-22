@@ -65,4 +65,9 @@ class IdeaBoxApp < Sinatra::Base
     erb :new_idea, locals: {idea: Idea.new}
   end
 
+  get '/search' do
+    searched_items = IdeaStore.search(params[:search])
+    erb :search, locals: {search: searched_items}
+  end
+
 end

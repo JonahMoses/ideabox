@@ -16,8 +16,7 @@ class Idea
     @id          = attributes["id"]
     @tags        = attributes["tags"] || "no tag"
     @created_at  = attributes["created_at"] ||= Time.now
-    @updated_at  = attributes["updated_at"] = Time.now
-
+    @updated_at  = attributes["updated_at"] ||= Time.now
   end
 
   def save

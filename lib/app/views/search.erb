@@ -1,0 +1,12 @@
+<h3 style="text-align: center">Searched Through The Database And Found:</h3>
+<br />
+<% search.each do |idea| %>
+  <div>
+    <div class="col-lg-4">
+      <%= erb :idea, locals: {idea: idea} %>
+      <br />
+    </div>
+  </div>
+<% end %>
+<br />
+

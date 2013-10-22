@@ -95,12 +95,18 @@ class IdeaStoreTest < Minitest::Test
   end
 
   def test_it_groups_by_tag
+    skip
     IdeaStore.create("title" => "Hello", "Description" => "World", "tags" => "English")
     IdeaStore.create("title" => "Hola", "Description" => "Mundo", "tags" => "Spanish")
     IdeaStore.create("title" => "Howdy", "Description" => "Partner", "tags" => "English")
     assert_equal 2, IdeaStore.tag_hash["English"].count
     assert_equal 1, IdeaStore.tag_hash["Spanish"].count
     assert_equal 2, IdeaStore.tag_hash["no tag"].count
+  end
+
+  def test_it_searches_items
+    result = IdeaStore.search("Hello")
+    assert_equal 0, result
   end
 
 
