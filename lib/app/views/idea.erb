@@ -1,8 +1,8 @@
 <b>Title:</b> <%= idea.title %><br />
 <b>Description:</b> <%= idea.description %><br />
 <b>Tags:</b> <%= idea.tags %><br />
-<b>Created At:</b> <%= idea.created_at %><br />
-<b>Updated Last At:</b> <%= idea.updated_at%><br />
+<b>Created At:</b> <%= idea.created_at.strftime("%-m/%e/%y") %><br />
+<b>Updated Last At:</b> <%= idea.updated_at.strftime("%-m/%e/%y") %><br />
 <b>Current Vote Rank:</b> <%= idea.rank %><br />
 
 <form action="/<%= idea.id %>" method="POST" style="display: inline">
