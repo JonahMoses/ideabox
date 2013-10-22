@@ -18,11 +18,9 @@ class IdeaStore
     end
 
     def all
-      ideas = []
-      raw_ideas.each_with_index do |data, i|
-        ideas << Idea.new(data.merge("id" => i))
+      raw_ideas.each_with_index.map do |data, i|
+        Idea.new(data.merge("id" => i))
       end
-      ideas
     end
 
     def destroy_database
@@ -70,13 +68,7 @@ class IdeaStore
     end
 
     def all_tags
-      all_tags = []
-      all.each do |idea|
-        idea.tags.split(', ').each do |tag|
-          all_tags << tag
-        end
-      end
-      all_tags.uniq
+      all.map{|i| i.tags.split(', ')}.join.uniq
     end
 
     def tag_hash
