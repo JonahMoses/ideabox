@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require_relative 'idea_box/idea_store'
 require_relative 'idea_box/idea'
-
+require 'pry'
 class IdeaBoxApp < Sinatra::Base
   set :method_override, true
   set :root, 'lib/app'
@@ -11,7 +11,6 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/' do
-
     erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new, tags: IdeaStore.all_tags}
   end
 
@@ -27,7 +26,7 @@ class IdeaBoxApp < Sinatra::Base
 
   get '/:id/edit' do |id|
     idea = IdeaStore.find(id.to_i)
-    erb :edit, locals: {idea: idea, rank: idea.rank}
+    erb :idea_submission, locals: {idea: idea, rank: idea.rank}
   end
 
   put '/:id' do |id|
@@ -39,14 +38,14 @@ class IdeaBoxApp < Sinatra::Base
     idea = IdeaStore.find(id.to_i)
     idea.like!
     IdeaStore.update(id.to_i, idea.to_h)
-    redirect '/:id/info'
+    redirect "/#{idea.id}/info"
   end
 
   post '/:id/dislike' do |id|
     idea = IdeaStore.find(id.to_i)
     idea.dislike!
     IdeaStore.update(id.to_i, idea.to_h)
-    redirect '/:id/info'
+    redirect '/'
   end
 
   get '/tags' do

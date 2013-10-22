@@ -14,7 +14,7 @@ class Idea
     @description = attributes["description"]
     @rank        = attributes["rank"] || 0
     @id          = attributes["id"]
-    @tags        = attributes["tags"] || "no tag"
+    @tags        = attributes["tags"]
     @created_at  = attributes["created_at"] ||= Time.now
     @updated_at  = attributes["updated_at"] ||= Time.now
   end

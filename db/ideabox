@@ -2,10 +2,10 @@
 ideas:
 - title: Best Idea
   description: This is the best idea
-  rank: 15
-  tags: best, idea, ever, ok
+  rank: 21
+  tags: best, idea, ever
   created_at: 2013-10-17 17:18:03.000000000 -06:00
-  updated_at: 2013-10-22 13:59:28.000000000 -06:00
+  updated_at: 2013-10-22 15:59:44.000000000 -06:00
 - title: Good Idea
   description: This is a better than average idea
   rank: 5
@@ -14,16 +14,16 @@ ideas:
   updated_at: 2013-10-19 15:35:26.000000000 -06:00
 - title: Average Idea
   description: This is an average idea
-  rank: 3
+  rank: 14
   tags: decent, idea, average
   created_at: 2013-10-17 17:18:24.000000000 -06:00
-  updated_at: 2013-10-19 15:36:01.000000000 -06:00
+  updated_at: 2013-10-22 15:24:14.000000000 -06:00
 - title: Below Average Idea
   description: This is a lower than average idea
-  rank: 6
+  rank: 7
   tags: below average, idea
   created_at: 2013-10-17 17:18:34.000000000 -06:00
-  updated_at: 2013-10-19 18:55:33.000000000 -06:00
+  updated_at: 2013-10-22 15:13:19.000000000 -06:00
 - title: Bad Idea
   description: This is a bad idea
   rank: 2
@@ -32,10 +32,10 @@ ideas:
   updated_at: 2013-10-19 15:52:57.000000000 -06:00
 - title: this is an idea
   description: that is shitty
-  rank: 7
-  tags: ok, idea
+  rank: 27
+  tags: ok, idea, hello
   created_at: 2013-10-17 17:18:42.000000000 -06:00
-  updated_at: 2013-10-21 17:59:35.000000000 -06:00
+  updated_at: 2013-10-22 16:19:07.000000000 -06:00
 - title: New Idea
   description: descriotion of idea
   rank: 0
@@ -47,4 +47,10 @@ ideas:
   rank: 0
   tags: bad, idea
   created_at: 2013-10-21 16:57:05.000000000 -06:00
-  updated_at: 2013-10-21 16:57:05.000000000 -06:00
+  updated_at: 2013-10-22 14:50:16.000000000 -06:00
+- title: testing tags
+  description: testin
+  rank: 0
+  tags: ''
+  created_at: 2013-10-22 16:00:52.000000000 -06:00
+  updated_at: 2013-10-22 16:00:52.000000000 -06:00
