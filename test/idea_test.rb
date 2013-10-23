@@ -54,5 +54,10 @@ class IdeaTest < Minitest::Test
     assert_equal "2013-10-17 16:44:01 -0600", idea.created_at
   end
 
+  def test_ideas_can_have_ids
+    idea = Idea.new("new idea", "testing id's")
+    IdeaStore.save(idea)
+    assert_equal 0, idea.id
+  end
 
 end
