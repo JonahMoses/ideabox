@@ -16,12 +16,12 @@ class IdeaBoxApp < Sinatra::Base
 
   post '/' do
     IdeaStore.create(params['idea'])
-    redirect '/'
+    redirect '/ideas'
   end
 
   delete '/:id' do |id|
     IdeaStore.delete(id.to_i)
-    redirect '/'
+    redirect back
   end
 
   get '/:id/edit' do |id|
@@ -31,7 +31,7 @@ class IdeaBoxApp < Sinatra::Base
 
   put '/:id' do |id|
     IdeaStore.update(id.to_i, params[:idea])
-    redirect '/'
+    redirect '/ideas'
   end
 
   post '/:id/like' do |id|
