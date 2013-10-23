@@ -115,5 +115,21 @@ class IdeaStore
       end
     end
 
+    def find_by_group(group)
+      all.select do |idea|
+        idea.group == group
+      end
+    end
+
+    def all_groups
+      all_groups = []
+      all.each do |group|
+        group.groups.split(', ').each do |group|
+          all_groups << group
+        end
+      end
+      all_groups.uniq
+    end
+
   end
 end

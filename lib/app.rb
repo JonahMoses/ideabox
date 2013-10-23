@@ -92,4 +92,8 @@ class IdeaBoxApp < Sinatra::Base
     erb :dates, locals: {ideas: ideas, day_of_week: day_of_week}
   end
 
+  get '/groups' do
+    matching_ideas = IdeaStore.find_by_group(params[:groups])
+    erb :groups, locals: {matching_ideas: matching_ideas}
+  end
 end

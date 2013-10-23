@@ -7,7 +7,7 @@
   </head>
   <body style="margin-left: 25px">
 
-    <%= erb :navigation, locals: {tags: IdeaStore.all_tags, idea: Idea.new} %>
+    <%= erb :navigation, locals: {groups: IdeaStore.all_groups, tags: IdeaStore.all_tags, idea: Idea.new} %>
 
     <%= yield %>
 

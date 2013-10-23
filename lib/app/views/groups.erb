@@ -1,0 +1,7 @@
+<div>
+    <h1 style="text-align: center;">Ideas In This Group:</h1><br />
+    <% matching_ideas.each do |idea| %>
+      <%= erb :idea, locals: {idea: idea, location: "non_front_page"} %>
+      <br />
+    <% end %>
+</div>
