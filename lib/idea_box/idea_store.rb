@@ -17,14 +17,6 @@ class IdeaStore
       @database
     end
 
-    def all
-      ideas = []
-      raw_ideas.each_with_index do |data, i|
-        ideas << Idea.new(data.merge("id" => i))
-      end
-      ideas
-    end
-
     def destroy_database
       database.transaction do |db|
         db["ideas"] = []
@@ -69,6 +61,12 @@ class IdeaStore
       end
     end
 
+    def all
+      raw_ideas.each_with_index.map do |data, i|
+        Idea.new(data.merge("id" => i))
+      end
+    end
+
     def all_tags
       all_tags = []
       all.each do |idea|
@@ -90,6 +88,30 @@ class IdeaStore
         idea.to_h["title"].include?(keyword) ||
         idea.to_h["description"].include?(keyword) ||
         idea.to_h["tags"].include?(keyword)
+      end
+    end
+
+    def day_string_to_num(week_day)
+     if week_day == "Monday"
+        day_num = 1
+      elsif week_day == "Tuesday"
+        day_num = 2
+      elsif week_day == "Wednesday"
+        day_num = 3
+      elsif week_day == "Thursday"
+        day_num = 4
+      elsif week_day == "Friday"
+        day_num = 5
+      elsif week_day == "Saturday"
+        day_num = 6
+      else
+        day_num = 7
+      end
+    end
+
+    def find_by_wday(day_of_week)
+      all.select do |idea|
+        idea.created_at.wday == day_string_to_num(day_of_week)
       end
     end
 

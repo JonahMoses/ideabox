@@ -1,23 +1,27 @@
 <% if tag == "all" %>
 
-  <% tags.each do |tag| %>
-    <div>
-      <h3><a href="/tags/<%= tag %>"><%= tag.upcase %></a></h3>
-      <div>
-        <font style="margin-left: 15px">Ideas With This Tag:</font>
-        <% ideas.tag_hash[tag].each do |idea| %>
-          <li style="margin-left: 25px"><%= idea.title %></li>
-        <% end %>
+  <div style="display: inline-block; clear: both" class="col-lg-4">
+    <% tags.each do |tag| %>
+      <div class="well well-sm">
+        <h3><a href="/tags/<%= tag %>"><%= tag.upcase %></a></h3>
+        <div>
+          <font style="margin-left: 15px">Ideas With This Tag:</font>
+          <% ideas.tag_hash[tag].each do |idea| %>
+            <li style="margin-left: 25px"><%= idea.title %></li>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
 <% else %>
 
-  <h1>Ideas With This Tag:</h1><br />
-  <% ideas.tag_hash[tag].each do |idea| %>
-    <%= erb :idea, locals: {idea: idea, location: "front_page"} %>
-    <br />
-  <% end %>
+  <div>
+    <h1 style="text-align: center;">Ideas With This Tag:</h1><br />
+    <% ideas.tag_hash[tag].each do |idea| %>
+      <%= erb :idea, locals: {idea: idea, location: "non_front_page"} %>
+      <br />
+    <% end %>
+  </div>
 
 <% end %>

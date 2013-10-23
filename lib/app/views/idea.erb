@@ -1,17 +1,24 @@
 <% if location == "front_page" %>
-  <b>Title:</b> <%= idea.title %><br />
-  <b>Description:</b> <%= idea.description %><br />
-  <b>Tags:</b> <%= idea.tags %><br />
-  <b>Created At:</b> <%= idea.created_at.strftime("%-m/%e/%y") %><br />
-  <b>Current Vote Rank:</b><span class="badge"><%= idea.rank %></span><br />
-  <%= erb :front_page_idea_functions, locals: {idea: idea} %>
+  <div>
+    <%= erb :front_page_idea_functions, locals: {idea: idea} %>
+    <b>Title:</b> <%= idea.title %><br />
+    <b>Description:</b> <%= idea.description %><br />
+    <b>Tags:</b> <%= idea.tags %><br />
+    <b>Created At:</b> <%= idea.created_at.strftime("%-m/%e/%y") %><br />
+    <b>Current Vote Rank:</b> <span class="badge"><%= idea.rank %></span><br />
+  </div>
 <% else %>
-  <h3 style="text-align: center"><%= idea.title %>:</h3>
-  <b>Title:</b> <%= idea.title %><br />
-  <b>Description:</b> <%= idea.description %><br />
-  <b>Tags:</b> <%= idea.tags %><br />
-  <b>Created At:</b> <%= idea.created_at.strftime("%r, %a %b %e %Y") %><br />
-  <b>Updated Last At:</b> <%= idea.updated_at.strftime("%r, %a %b %e %Y") %><br />
-  <b>Current Vote Rank:</b> <%= idea.rank %><br />
-  <%= erb :all_idea_functions, locals: {idea: idea} %>
+  <div>
+    <h3 style="text-align: center">Idea Title: <i><%= idea.title %></i></h3>
+    <div class="well well-sm" style="width: 50%; margin-left: 20%">
+      <%= erb :all_idea_functions, locals: {idea: idea} %>
+      <b>Title:</b> <%= idea.title %><br />
+      <b>Description:</b> <%= idea.description %><br />
+      <b>Tags:</b> <%= idea.tags %><br />
+      <b>Created At:</b> <%= idea.created_at.strftime("%r, %a %b %e %Y") %><br />
+      <b>Updated Last At:</b> <%= idea.updated_at.strftime("%r, %a %b %e %Y") %><br />
+      <b>Current Vote Rank:</b> <%= idea.rank %><br />
+    </div>
+  </div>
 <% end %>
+

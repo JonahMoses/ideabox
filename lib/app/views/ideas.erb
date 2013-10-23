@@ -1,0 +1,18 @@
+<h3 style="text-align: center"><%= header %></h3>
+<br />
+<div>
+  <% grouped_ideas.each do |key, ideas| %>
+    <div style="clear: both;">
+      <h3><%= key %></h3>
+
+      <% ideas.each do |idea| %>
+        <div class="col-lg-4">
+          <div class="well well-sm">
+            <%= erb :idea, locals: {idea: idea, location: "front_page"}%>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

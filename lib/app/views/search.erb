@@ -3,8 +3,10 @@
 <% search.each do |idea| %>
   <div>
     <div class="col-lg-4">
-      <%= erb :idea, locals: {idea: idea, location: "front_page"} %>
-      <br />
+      <div class="well well-sm">
+        <%= erb :idea, locals: {idea: idea, location: "front_page"} %>
+        <br />
+      </div>
     </div>
   </div>
 <% end %>

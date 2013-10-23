@@ -15,7 +15,7 @@
       <li class="active">&nbsp;</li>
 
       <li><a data-toggle="modal" href="#myModal">Submit An Idea</a></li>
-
+      <li><a href="/ideas">View All Ideas</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">In Use Tags <b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -32,27 +32,28 @@
             </li>
         </ul>
       </li>
-    </ul>
 
-    <form class="navbar-form navbar-left" role="search" action="/search" method="GET">
-      <font style="padding: 10px 15px; color: #777777; padding-top: 15px;">Search:</font>
-      <div class="form-group">
-        <input type="text" class="form-control" name="search" placeholder="Ideas, Desc and Tags">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Link</a></li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Statistics <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li><a href="#">Separated link</a></li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="/ideas?sort_by=day">Ideas By Day</a>
+          </li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="/ideas?sort_by=time">Ideas By Time</a>
+          </li>
         </ul>
       </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <form class="navbar-form navbar-left" role="search" action="/search" method="GET">
+        <div class="form-group">
+          <input type="text" class="form-control" name="search" placeholder="Ideas, Desc and Tags">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
