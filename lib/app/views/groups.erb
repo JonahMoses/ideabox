@@ -1,7 +1,6 @@
 <% if group == "all" %>
-  <h3 style="text-align: center;">Ideas In All Groups:</h3>
-  <br />
 
+  <h3 style="text-align: center;">Ideas In All Groups:</h3><br />
   <div>
     <% all_groups.each do |key, value| %>
       <div style="clear: both">
@@ -10,7 +9,7 @@
         <% value.each do |idea| %>
           <div class="col-lg-4">
             <div class="well well-sm">
-                <%= erb :idea, locals: {idea: idea, location: "view_only_function"} %>
+              <%= erb :idea, locals: {idea: idea, location: "view_only_function"} %>
             </div>
           </div>
         <% end %>
@@ -25,8 +24,7 @@
     <% all_groups[group].each do |idea| %>
       <div class="col-lg-4">
         <div class="well well-sm">
-            <%= erb :idea, locals: {idea: idea, location: "view_only_function"} %>
-          <br />
+          <%= erb :idea, locals: {idea: idea, location: "view_only_function"} %><br />
         </div>
       </div>
     <% end %>

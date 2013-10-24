@@ -5,12 +5,12 @@ class IdeaStore
 
     def database
       return @database if @database
-
       if ENV['RACK_ENV'] == 'test'
         @database = YAML::Store.new "db/ideabox_test"
       else
         @database = YAML::Store.new "db/ideabox"
       end
+
       @database.transaction do
         @database['ideas'] ||= []
       end
@@ -93,20 +93,14 @@ class IdeaStore
     end
 
     def day_string_to_num(week_day)
-     if week_day == "Monday"
-        day_num = 1
-      elsif week_day == "Tuesday"
-        day_num = 2
-      elsif week_day == "Wednesday"
-        day_num = 3
-      elsif week_day == "Thursday"
-        day_num = 4
-      elsif week_day == "Friday"
-        day_num = 5
-      elsif week_day == "Saturday"
-        day_num = 6
-      else
-        day_num = 7
+      case week_day
+        when "Monday"   then day_num = 1
+        when "Tuesday"  then day_num = 2
+        when "Wednesday"then day_num = 3
+        when "Thursday" then day_num = 4
+        when "Friday"   then day_num = 5
+        when "Saturday" then day_num = 6
+        when "Sunday"   then day_num = 7
       end
     end
 

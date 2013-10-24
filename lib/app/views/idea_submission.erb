@@ -1,16 +1,13 @@
 <form action='/<%= idea.id %>' method='POST'>
+
   Idea Title:<br />
   <input style="width: 540px" type='text' name='idea[title]' value="<%= idea.title %>" /><br /><br />
-
   Idea Description:<br />
   <input style="width: 540px" type="text" name='idea[description]'value="<%= idea.description %>" /><br/><br />
-
   Idea Tags:<br />
   <input style="width: 540px" type='text' name='idea[tags]' value="<%= idea.tags %>" /><br /><br />
-
   Idea Groups:<br />
   <input class="ui-widget" id="groups" style="width: 540px" type='text' name='idea[group]' /><br /><br />
-
   <div class="pull-right">
     <input class="btn btn-default btn-primary" type='submit' />
   </div><br />

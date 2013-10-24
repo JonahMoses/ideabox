@@ -76,14 +76,14 @@ class IdeaBoxApp < Sinatra::Base
     if sort_by == 'day' || sort_by == 'time'
       if params[:sort_by] == 'day'
         titles = "days"
-        ideas = IdeaStore.all.group_by { |idea| idea.created_at.strftime("%a") }
+        ideas  = IdeaStore.all.group_by { |idea| idea.created_at.strftime("%a") }
       elsif params[:sort_by] == 'time'
         titles = "times"
-        ideas = IdeaStore.all.group_by { |idea| idea.created_at.strftime("%I %p") }.sort
+        ideas  = IdeaStore.all.group_by { |idea| idea.created_at.strftime("%I %p") }.sort
       end
       header = "Statistics:"
     else
-      ideas = {"" => IdeaStore.all.sort}
+      ideas  = {"" => IdeaStore.all.sort}
       header = "Existing Ideas:"
     end
     erb :ideas, locals: {grouped_ideas: ideas, idea: Idea.new, tags: IdeaStore.all_tags, header: header, titles: titles}

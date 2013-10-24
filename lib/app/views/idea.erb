@@ -1,4 +1,5 @@
 <% if location == "view_only_function" %>
+
   <div>
     <%= erb :view_idea_function, locals: {idea: idea} %>
     <b>Title:</b> <%= idea.title %><br />
@@ -7,7 +8,9 @@
     <b>Created At:</b> <%= idea.created_at.strftime("%-m/%e/%y") %><br />
     <b>Current Vote Rank:</b> <span class="badge"><%= idea.rank %></span><br />
   </div>
+
 <% else %>
+
   <div>
     <h3 style="text-align: center">Idea Title: <i><%= idea.title %></i></h3>
     <div class="well well-sm" style="width: 50%; margin-left: 25%">
@@ -21,4 +24,5 @@
       <b>Current Vote Rank:</b><br /><span style="margin-left: 30px"><%= idea.rank %></span><br />
     </div>
   </div>
+
 <% end %>

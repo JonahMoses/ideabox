@@ -3,24 +3,24 @@
 <div>
   <% grouped_ideas.each do |key, ideas| %>
     <div style="clear: both;">
-    <% if titles %>
-      <h3><%= key %>:</h3>
-      <% ideas.each do |idea| %>
-        <div class="col-lg-4">
-          <div class="well well-sm">
-            <%= erb :idea, locals: {idea: idea, location: "view_only_function"}%>
+      <% if titles %>
+        <h3><%= key %>:</h3>
+        <% ideas.each do |idea| %>
+          <div class="col-lg-4">
+            <div class="well well-sm">
+              <%= erb :idea, locals: {idea: idea, location: "view_only_function"}%>
+            </div>
           </div>
-        </div>
-      <% end %>
-    <% else %>
-      <% ideas.each do |idea| %>
-        <div class="col-lg-4">
-          <div class="well well-sm">
-            <%= erb :idea, locals: {idea: idea, location: "view_only_function"}%>
+        <% end %>
+      <% else %>
+        <% ideas.each do |idea| %>
+          <div class="col-lg-4">
+            <div class="well well-sm">
+              <%= erb :idea, locals: {idea: idea, location: "view_only_function"}%>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
     </div>
   <% end %>
 </div>

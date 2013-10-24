@@ -1,21 +1,22 @@
 <% if tag == "all" %>
-  <h3 style="text-align: center;">Ideas With All Tags:</h3>
-  <br />
 
+  <h3 style="text-align: center;">Ideas With All Tags:</h3><br />
   <div style="width: 98%">
     <% tags.each do |tag| %>
+
       <div style="clear: both">
         <h3><a href="/tags/<%= tag %>"><%= tag.capitalize %></a></h3>
         <font style="margin-left: 15px">Ideas With This Tag:</font>
       </div>
 
-        <% ideas.tag_hash[tag].each do |idea| %>
-          <div class="col-lg-4">
-            <div class="well well-sm">
-              <li style="margin-left: 25px"><a href="<%= idea.id %>/info"><%= idea.title %></a></li>
-            </div>
+      <% ideas.tag_hash[tag].each do |idea| %>
+        <div class="col-lg-4">
+          <div class="well well-sm">
+            <li style="margin-left: 25px"><a href="<%= idea.id %>/info"><%= idea.title %></a></li>
           </div>
-        <% end %>
+        </div>
+      <% end %>
+
     <% end %>
   </div>
 
@@ -31,5 +32,4 @@
       </div>
     <% end %>
   </div>
-
 <% end %>
