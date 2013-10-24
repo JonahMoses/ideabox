@@ -1,17 +1,41 @@
 <form action='/<%= idea.id %>' method='POST'>
-  <h3>Edit your idea:</h3><br />
-    Idea Title:
-    <input style="margin-left: 62px; width: 400px" type='text' name='idea[title]' value="<%= idea.title %>" /><br /><br />
+  <div>
+    <h3 style="text-align: center">Edit Idea: <i><%= idea.title %></i></h3>
+    <div class="well well-sm" style="width: 50%; margin-left: 25%">
 
-    Idea Description:
-    <input style="margin-left: 15px; width: 400px" type="text" name='idea[description]'value="<%= idea.description %>" /><br/><br />
+      <b>Title:</b><br />
+      <span style="margin-left: 30px">
+        <input style="width: 90%" type='text' name='idea[title]' value="<%= idea.title %>" />
+      </span><br />
 
-    Idea Tags:
-    <input style="margin-left: 56px; width: 400px" type='text' name='idea[tags]' value="<%= idea.tags %>" /><br /><br />
+      <b>Description:</b><br />
+      <span style="margin-left: 30px">
+        <input style="width: 90%" type="text" name='idea[description]'value="<%= idea.description %>" />
+      </span><br />
 
-    Idea Groups:
-    <div class="ui-widget">
-      <!-- <label for="groups">Groups: </label> -->
-      <input id="groups" style="margin-left: 56px; width: 400px" type='text' name='idea[group]' value="<%= idea.group %>"/>
+      <b>Tags:</b><br />
+      <span style="margin-left: 30px">
+        <input style="width: 90%" type='text' name='idea[tags]' value="<%= idea.tags %>" />
+      </span><br />
+
+      <b>Group:</b><br />
+      <span style="margin-left: 30px">
+        <input class="ui-widget" id="groups" style="width: 90%" type='text' name='idea[group]' value="<%= idea.group %>"/>
+      </span><br /><br />
+
+      <input type="hidden" name="_method" value="PUT" />
+      <input class="btn btn-primary btn-lg; pull-right" style="margin-right: 5.5%" type='submit' /><br /><br />
     </div>
-<input type='submit' />
+  </div>
+</form>
+
+<script>
+$(function() {
+  var availableGroups =
+    <%= groups.to_json %>
+  ;
+  $("#groups").autocomplete({
+    source: availableGroups
+  });
+});
+</script>

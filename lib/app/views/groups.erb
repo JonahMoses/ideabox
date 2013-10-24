@@ -1,10 +1,11 @@
 <% if group == "all" %>
   <h3 style="text-align: center;">Ideas In All Groups:</h3>
   <br />
+
   <div>
     <% all_groups.each do |key, value| %>
       <div style="clear: both">
-      <h3>"<%= key %>":</h3>
+      <h3><a href="/groups/<%= key %>"><%= key.capitalize %>:</a></h3>
 
         <% value.each do |idea| %>
           <div class="col-lg-4">
@@ -16,7 +17,9 @@
       </div>
     <% end %>
   </div>
+
 <% else %>
+
   <div style="clear: both">
     <h3 style="text-align: center;">Ideas In "<%= group %>" Group:</h3><br /><br />
     <% all_groups[group].each do |idea| %>

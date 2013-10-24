@@ -1,26 +1,34 @@
 <% if tag == "all" %>
+  <h3 style="text-align: center;">Ideas With All Tags:</h3>
+  <br />
 
-  <div style="display: inline-block; clear: both" class="col-lg-4">
+  <div style="width: 98%">
     <% tags.each do |tag| %>
-      <div class="well well-sm">
-        <h3><a href="/tags/<%= tag %>"><%= tag.upcase %></a></h3>
-        <div>
-          <font style="margin-left: 15px">Ideas With This Tag:</font>
-          <% ideas.tag_hash[tag].each do |idea| %>
-            <li style="margin-left: 25px"><%= idea.title %></li>
-          <% end %>
-        </div>
+      <div style="clear: both">
+        <h3><a href="/tags/<%= tag %>"><%= tag.capitalize %></a></h3>
+        <font style="margin-left: 15px">Ideas With This Tag:</font>
       </div>
+
+        <% ideas.tag_hash[tag].each do |idea| %>
+          <div class="col-lg-4">
+            <div class="well well-sm">
+              <li style="margin-left: 25px"><a href="<%= idea.id %>/info"><%= idea.title %></a></li>
+            </div>
+          </div>
+        <% end %>
     <% end %>
   </div>
 
 <% else %>
 
   <div>
-    <h1 style="text-align: center;">Ideas With This Tag:</h1><br />
+    <h3 style="text-align: center;">Ideas With This Tag:</h3><br />
     <% ideas.tag_hash[tag].each do |idea| %>
-      <%= erb :idea, locals: {idea: idea, location: "non_front_page"} %>
-      <br />
+      <div class="col-lg-4">
+        <div class="well well-sm">
+          <%= erb :idea, locals: {idea: idea, location: "view_only_function"} %>
+        </div>
+      </div>
     <% end %>
   </div>
 

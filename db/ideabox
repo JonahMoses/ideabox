@@ -34,10 +34,10 @@ ideas:
   updated_at: 2013-10-19 15:52:57.000000000 -06:00
 - title: this is an idea
   description: that
-  rank: 29
+  rank: 21
   tags: ok, idea, hello
   created_at: 2013-10-17 17:18:42.000000000 -06:00
-  updated_at: 2013-10-23 16:18:34.000000000 -06:00
+  updated_at: 2013-10-23 22:34:48.000000000 -06:00
   group: No Group
 - title: New Idea
   description: descriotion of idea
@@ -138,13 +138,6 @@ ideas:
   created_at: 2013-10-23 18:00:47.000000000 -06:00
   updated_at: 2013-10-23 18:00:47.000000000 -06:00
   group: '10'
-- title: '4'
-  description: '4'
-  rank: 0
-  tags: '4'
-  created_at: 2013-10-23 18:00:57.000000000 -06:00
-  updated_at: 2013-10-23 18:00:57.000000000 -06:00
-  group: '4'
 - title: wtf
   description: this is cool
   rank: 0
@@ -180,24 +173,17 @@ ideas:
   created_at: 2013-10-23 19:39:43.000000000 -06:00
   updated_at: 2013-10-23 19:39:43.000000000 -06:00
   group: '1'
-- title: TESTING 567
-  description: ''
+- title: hello
+  description: this ok cool, please work.
+  rank: 4
+  tags: 'is '
+  created_at: 2013-10-23 21:59:09.000000000 -06:00
+  updated_at: 2013-10-23 22:23:58.000000000 -06:00
+  group: new idea
+- title: new idea
+  description: bad description
   rank: 0
-  tags: ''
-  created_at: 2013-10-23 19:42:19.000000000 -06:00
-  updated_at: 2013-10-23 19:42:19.000000000 -06:00
-  group: ''
-- title: More ideas
-  description: '4252'
-  rank: 0
-  tags: '324'
-  created_at: 2013-10-23 19:44:33.000000000 -06:00
-  updated_at: 2013-10-23 19:44:33.000000000 -06:00
-  group: ok
-- title: asdf
-  description: adsf
-  rank: 0
-  tags: asdf
-  created_at: 2013-10-23 21:44:20.000000000 -06:00
-  updated_at: 2013-10-23 21:44:20.000000000 -06:00
-  group: asdfa
+  tags: bad, ok, decent, nearing the end of my night
+  created_at: 2013-10-23 22:44:45.000000000 -06:00
+  updated_at: 2013-10-23 22:44:57.000000000 -06:00
+  group: searching

@@ -1,42 +1,20 @@
 <form action='/<%= idea.id %>' method='POST'>
-  <p>
-    <% if idea.id %>
-      <h3>Edit your idea:</h3><br />
-      Idea Title:
-      <input style="margin-left: 62px; width: 400px" type='text' name='idea[title]' value="<%= idea.title %>" /><br /><br />
+  Idea Title:<br />
+  <input style="width: 540px" type='text' name='idea[title]' value="<%= idea.title %>" /><br /><br />
 
-      Idea Description:
-      <input style="margin-left: 15px; width: 400px" type="text" name='idea[description]'value="<%= idea.description %>" /><br/><br />
+  Idea Description:<br />
+  <input style="width: 540px" type="text" name='idea[description]'value="<%= idea.description %>" /><br/><br />
 
-      Idea Tags:
-      <input style="margin-left: 56px; width: 400px" type='text' name='idea[tags]' value="<%= idea.tags %>" /><br /><br />
+  Idea Tags:<br />
+  <input style="width: 540px" type='text' name='idea[tags]' value="<%= idea.tags %>" /><br /><br />
 
-      Idea Groups:
-      <div class="ui-widget">
-        <!-- <label for="groups">Groups: </label> -->
-        <input id="groups" style="margin-left: 56px; width: 400px" type='text' name='idea[group]' value="<%= idea.group %>"/>
-      </div>
-    <% else %>
-      Idea Title:<br />
-      <input style="width: 540px" type='text' name='idea[title]' value="<%= idea.title %>" /><br /><br />
+  Idea Groups:<br />
+  <input class="ui-widget" id="groups" style="width: 540px" type='text' name='idea[group]' /><br /><br />
 
-      Idea Description:<br />
-      <input style="width: 540px" type="text" name='idea[description]'value="<%= idea.description %>" /><br/><br />
+  <div class="pull-right">
+    <input class="btn btn-default btn-primary" type='submit' />
+  </div><br />
 
-      Idea Tags:<br />
-      <input style="width: 540px" type='text' name='idea[tags]' value="<%= idea.tags %>" /><br /><br />
-
-      Idea Groups:<br />
-      <input class="ui-widget" id="groups" style="width: 540px" type='text' name='idea[group]' />
-
-    <% end %>
-  </p>
-
-  <% if idea.id %>
-    <input type="hidden" name="_method" value="PUT" />
-  <% end %>
-
-  <input type='submit' />
 </form>
 
 <script>
