@@ -1,4 +1,5 @@
 <div class="pull-right" style="text-align: right; margin-top: 10px">
+<br /><br />
   <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
     <button class="btn btn-xs btn-success" type='submit'/>
       Vote Up
@@ -13,7 +14,7 @@
 
   <form action="/<%= idea.id %>" method="POST" style="display: inline">
     <input class="btn btn-xs btn-warning" type="button" value="Edit" onClick="window.location.href='/<%= idea.id %>/edit'">
-    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_method" value="DELETE"><br /><br />
     <input class="btn btn-xs btn-danger" type="submit" value="Delete"/>
   </form><br/>
 

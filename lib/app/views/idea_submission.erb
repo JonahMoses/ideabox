@@ -10,6 +10,12 @@
 
       Idea Tags:
       <input style="margin-left: 56px; width: 400px" type='text' name='idea[tags]' value="<%= idea.tags %>" /><br /><br />
+
+      Idea Groups:
+      <div class="ui-widget">
+        <!-- <label for="groups">Groups: </label> -->
+        <input id="groups" style="margin-left: 56px; width: 400px" type='text' name='idea[group]' value="<%= idea.group %>"/>
+      </div>
     <% else %>
       Idea Title:
       <input style="margin-left: 62px; width: 400px" type='text' name='idea[title]' value="<%= idea.title %>" /><br /><br />
@@ -19,6 +25,13 @@
 
       Idea Tags:
       <input style="margin-left: 56px; width: 400px" type='text' name='idea[tags]' value="<%= idea.tags %>" /><br /><br />
+
+      Idea Groups:
+      <div class="ui-widget">
+        <!-- <label for="groups">Groups: </label> -->
+        <input id="groups" style="margin-left: 56px; width: 400px" type='text' name='idea[group]' />
+      </div>
+
     <% end %>
   </p>
 
@@ -28,3 +41,14 @@
 
   <input type='submit' />
 </form>
+
+<script>
+$(function() {
+  var availableGroups =
+    <%= groups.to_json %>
+  ;
+  $("#groups").autocomplete({
+    source: availableGroups
+  });
+});
+</script>

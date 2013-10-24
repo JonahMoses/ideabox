@@ -34,13 +34,13 @@
       </li>
 
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idea Groups <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Grouped Ideas <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li role="presentation">
-            <a role="menuitem" tabindex="-1" href="/tags">View Available Groups</a>
+            <a role="menuitem" tabindex="-1" href="/groups/all">View All Groups</a>
           </li>
           <li role="presentation" class="divider"></li>
-            <li role="presentation">
+          <li role="presentation">
               <% groups.each do |group| %>
                 <a href="/groups/<%= group %>" role="menuitem" tabindex="-1">
                   <%= group %>
@@ -84,7 +84,7 @@
         <h4 class="modal-title" style="text-align: center">Enter Your Idea</h4>
       </div>
       <div class="modal-body">
-        <%= erb :idea_submission, locals: {idea: idea} %>
+        <%= erb :idea_submission, locals: { idea: idea, groups: IdeaStore.all_groups } %>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

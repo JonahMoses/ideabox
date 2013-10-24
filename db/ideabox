@@ -5,7 +5,7 @@ ideas:
   rank: 16
   tags: best, idea, ever
   created_at: 2013-10-17 17:18:03.000000000 -06:00
-  updated_at: 2013-10-22 23:21:23.000000000 -06:00
+  updated_at: 2013-10-23 16:17:31.000000000 -06:00
   group: No Group
 - title: Good Idea
   description: This is a better than average idea
@@ -33,11 +33,11 @@ ideas:
   created_at: 2013-10-17 17:18:38.000000000 -06:00
   updated_at: 2013-10-19 15:52:57.000000000 -06:00
 - title: this is an idea
-  description: that is shitty
+  description: that
   rank: 29
   tags: ok, idea, hello
   created_at: 2013-10-17 17:18:42.000000000 -06:00
-  updated_at: 2013-10-22 23:21:15.000000000 -06:00
+  updated_at: 2013-10-23 16:18:34.000000000 -06:00
   group: No Group
 - title: New Idea
   description: descriotion of idea
@@ -75,3 +75,80 @@ ideas:
   tags: ok
   created_at: 2013-10-22 23:09:15.000000000 -06:00
   updated_at: 2013-10-22 23:09:15.000000000 -06:00
+- title: testing group 3
+  description: group 3
+  rank: 0
+  tags: group3
+  created_at: 2013-10-23 15:55:19.000000000 -06:00
+  updated_at: 2013-10-23 15:55:19.000000000 -06:00
+  group: No Group
+- title: grouping
+  description: grouping
+  rank: 0
+  tags: grouping
+  created_at: 2013-10-23 16:00:44.000000000 -06:00
+  updated_at: 2013-10-23 16:00:44.000000000 -06:00
+  group: grouping
+- title: that idea
+  description: '1'
+  rank: 5
+  tags: '1'
+  created_at: 2013-10-23 16:11:39.000000000 -06:00
+  updated_at: 2013-10-23 16:14:07.000000000 -06:00
+  group: myowngroup
+- title: testing search
+  description: searching for groups
+  rank: 0
+  tags: no tags
+  created_at: 2013-10-23 17:47:05.000000000 -06:00
+  updated_at: 2013-10-23 17:47:05.000000000 -06:00
+  group: searching
+- title: idea submission
+  description: testing that it redirects to the correct location
+  rank: 0
+  tags: redirection
+  created_at: 2013-10-23 17:50:00.000000000 -06:00
+  updated_at: 2013-10-23 17:50:00.000000000 -06:00
+  group: redirection
+- title: where does this go?
+  description: redirect?
+  rank: 0
+  tags: broken
+  created_at: 2013-10-23 17:52:35.000000000 -06:00
+  updated_at: 2013-10-23 17:52:35.000000000 -06:00
+  group: redirection
+- title: '1'
+  description: '2'
+  rank: 0
+  tags: '3'
+  created_at: 2013-10-23 17:58:05.000000000 -06:00
+  updated_at: 2013-10-23 17:58:05.000000000 -06:00
+  group: '4'
+- title: '5'
+  description: '5'
+  rank: 0
+  tags: '5'
+  created_at: 2013-10-23 18:00:00.000000000 -06:00
+  updated_at: 2013-10-23 18:00:00.000000000 -06:00
+  group: '4'
+- title: '10'
+  description: '10'
+  rank: 0
+  tags: '10'
+  created_at: 2013-10-23 18:00:47.000000000 -06:00
+  updated_at: 2013-10-23 18:00:47.000000000 -06:00
+  group: '10'
+- title: '4'
+  description: '4'
+  rank: 0
+  tags: '4'
+  created_at: 2013-10-23 18:00:57.000000000 -06:00
+  updated_at: 2013-10-23 18:00:57.000000000 -06:00
+  group: '4'
+- title: wtf
+  description: this is cool
+  rank: 0
+  tags: got it working!
+  created_at: 2013-10-23 18:08:55.000000000 -06:00
+  updated_at: 2013-10-23 18:08:55.000000000 -06:00
+  group: working!

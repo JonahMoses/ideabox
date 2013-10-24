@@ -48,7 +48,7 @@ class IdeaStore
 
     def update(id, data)
       idea = IdeaStore.find(id)
-      updated_idea = data.merge("updated_at" => Time.now)
+      updated_idea = data.merge("updated_at" => Time.now )
       database.transaction do
         database['ideas'][id] = idea.to_h.merge(updated_idea)
       end
@@ -59,6 +59,7 @@ class IdeaStore
       database.transaction do
         database['ideas'] << new_idea.to_h
       end
+      new_idea
     end
 
     def all
@@ -87,7 +88,8 @@ class IdeaStore
       all.select do |idea|
         idea.to_h["title"].include?(keyword) ||
         idea.to_h["description"].include?(keyword) ||
-        idea.to_h["tags"].include?(keyword)
+        idea.to_h["tags"].include?(keyword) ||
+        idea.to_h["group"].include?(keyword)
       end
     end
 
@@ -121,14 +123,12 @@ class IdeaStore
       end
     end
 
+    def group_hash
+      all.group_by { |idea| idea.group }
+    end
+
     def all_groups
-      all_groups = []
-      all.each do |group|
-        group.groups.split(', ').each do |group|
-          all_groups << group
-        end
-      end
-      all_groups.uniq
+      group_hash.collect { |key, value| key }
     end
 
   end

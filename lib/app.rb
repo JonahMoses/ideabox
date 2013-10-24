@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'json'
 require_relative 'idea_box/idea_store'
 require_relative 'idea_box/idea'
 
@@ -15,8 +16,8 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   post '/' do
-    IdeaStore.create(params['idea'])
-    redirect '/ideas'
+    idea = IdeaStore.create(params['idea'])
+    redirect "/#{idea.id}/info"
   end
 
   delete '/:id' do |id|
@@ -26,12 +27,12 @@ class IdeaBoxApp < Sinatra::Base
 
   get '/:id/edit' do |id|
     idea = IdeaStore.find(id.to_i)
-    erb :idea_submission, locals: {idea: idea, rank: idea.rank}
+    erb :idea_submission, locals: {idea: idea, rank: idea.rank, groups: IdeaStore.all_groups }
   end
 
   put '/:id' do |id|
     IdeaStore.update(id.to_i, params[:idea])
-    redirect '/ideas'
+    redirect "/#{id}/info"
   end
 
   post '/:id/like' do |id|
@@ -92,8 +93,11 @@ class IdeaBoxApp < Sinatra::Base
     erb :dates, locals: {ideas: ideas, day_of_week: day_of_week}
   end
 
-  get '/groups' do
-    matching_ideas = IdeaStore.find_by_group(params[:groups])
-    erb :groups, locals: {matching_ideas: matching_ideas}
+  get '/groups/all' do
+    erb :groups, locals: {all_groups: IdeaStore.group_hash, group: "all"}
+  end
+
+  get '/groups/:group' do |group|
+    erb :groups, locals: {all_groups: IdeaStore.group_hash, group: params[:group]}
   end
 end
