@@ -17,20 +17,17 @@
         <input id="groups" style="margin-left: 56px; width: 400px" type='text' name='idea[group]' value="<%= idea.group %>"/>
       </div>
     <% else %>
-      Idea Title:
-      <input style="margin-left: 62px; width: 400px" type='text' name='idea[title]' value="<%= idea.title %>" /><br /><br />
+      Idea Title:<br />
+      <input style="width: 540px" type='text' name='idea[title]' value="<%= idea.title %>" /><br /><br />
 
-      Idea Description:
-      <input style="margin-left: 15px; width: 400px" type="text" name='idea[description]'value="<%= idea.description %>" /><br/><br />
+      Idea Description:<br />
+      <input style="width: 540px" type="text" name='idea[description]'value="<%= idea.description %>" /><br/><br />
 
-      Idea Tags:
-      <input style="margin-left: 56px; width: 400px" type='text' name='idea[tags]' value="<%= idea.tags %>" /><br /><br />
+      Idea Tags:<br />
+      <input style="width: 540px" type='text' name='idea[tags]' value="<%= idea.tags %>" /><br /><br />
 
-      Idea Groups:
-      <div class="ui-widget">
-        <!-- <label for="groups">Groups: </label> -->
-        <input id="groups" style="margin-left: 56px; width: 400px" type='text' name='idea[group]' />
-      </div>
+      Idea Groups:<br />
+      <input class="ui-widget" id="groups" style="width: 540px" type='text' name='idea[group]' />
 
     <% end %>
   </p>

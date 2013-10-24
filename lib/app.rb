@@ -27,7 +27,7 @@ class IdeaBoxApp < Sinatra::Base
 
   get '/:id/edit' do |id|
     idea = IdeaStore.find(id.to_i)
-    erb :idea_submission, locals: {idea: idea, rank: idea.rank, groups: IdeaStore.all_groups }
+    erb :editing_idea, locals: {idea: idea, rank: idea.rank, groups: IdeaStore.all_groups }
   end
 
   put '/:id' do |id|
@@ -59,7 +59,7 @@ class IdeaBoxApp < Sinatra::Base
 
   get '/:id/info' do |id|
     idea = IdeaStore.find(id.to_i)
-    erb :idea, locals: {idea: idea, location: "not_front_page"}
+    erb :idea, locals: {idea: idea, location: "detailed_view"}
   end
 
   get '/new_idea' do
@@ -75,8 +75,10 @@ class IdeaBoxApp < Sinatra::Base
     sort_by = params[:sort_by]
     if sort_by == 'day' || sort_by == 'time'
       if params[:sort_by] == 'day'
+        titles = "days"
         ideas = IdeaStore.all.group_by { |idea| idea.created_at.strftime("%a") }
       elsif params[:sort_by] == 'time'
+        titles = "times"
         ideas = IdeaStore.all.group_by { |idea| idea.created_at.strftime("%I %p") }.sort
       end
       header = "Statistics:"
@@ -84,7 +86,7 @@ class IdeaBoxApp < Sinatra::Base
       ideas = {"" => IdeaStore.all.sort}
       header = "Existing Ideas:"
     end
-    erb :ideas, locals: {grouped_ideas: ideas, idea: Idea.new, tags: IdeaStore.all_tags, header: header}
+    erb :ideas, locals: {grouped_ideas: ideas, idea: Idea.new, tags: IdeaStore.all_tags, header: header, titles: titles}
   end
 
   get '/dates/:day' do

@@ -6,11 +6,4 @@
     <a class="btn btn-primary btn-lg">Sign Up</a></p>
   </div>
 </div>
-<h3 style="text-align: center">Existings Ideas:</h3>
-<% ideas.each do |idea| %>
-  <div class="col-lg-4">
-    <div class="well well-sm">
-      <%= erb :idea, locals: {idea: idea, location: "front_page"}%>
-    </div>
-  </div>
-<% end %>
+

@@ -9,7 +9,7 @@
         <% value.each do |idea| %>
           <div class="col-lg-4">
             <div class="well well-sm">
-                <%= erb :idea, locals: {idea: idea, location: "front_page"} %>
+                <%= erb :idea, locals: {idea: idea, location: "view_only_function"} %>
             </div>
           </div>
         <% end %>
@@ -22,7 +22,7 @@
     <% all_groups[group].each do |idea| %>
       <div class="col-lg-4">
         <div class="well well-sm">
-            <%= erb :idea, locals: {idea: idea, location: "front_page"} %>
+            <%= erb :idea, locals: {idea: idea, location: "view_only_function"} %>
           <br />
         </div>
       </div>

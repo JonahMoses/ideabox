@@ -1,6 +1,6 @@
-<% if location == "front_page" %>
+<% if location == "view_only_function" %>
   <div>
-    <%= erb :front_page_idea_functions, locals: {idea: idea} %>
+    <%= erb :view_idea_function, locals: {idea: idea} %>
     <b>Title:</b> <%= idea.title %><br />
     <b>Description:</b> <%= idea.description[0..40] %><br />
     <b>Tags:</b> <%= idea.tags %><br />
@@ -11,7 +11,7 @@
   <div>
     <h3 style="text-align: center">Idea Title: <i><%= idea.title %></i></h3>
     <div class="well well-sm" style="width: 50%; margin-left: 20%">
-      <%= erb :all_idea_functions, locals: {idea: idea} %>
+      <%= erb :expanded_idea_functions, locals: {idea: idea} %>
       <b>Title:</b><br /><span style="margin-left: 30px"><%= idea.title %></span><br />
       <b>Description:</b><br /><span style="margin-left: 30px"><%= idea.description %></span><br />
       <b>Tags:</b><br /><span style="margin-left: 30px"><%= idea.tags %></span><br />
