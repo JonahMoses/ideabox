@@ -104,11 +104,4 @@ class IdeaStoreTest < Minitest::Test
     assert_equal 2, IdeaStore.tag_hash["no tag"].count
   end
 
-  def test_it_searches_items
-    result = IdeaStore.search("Hello")
-    assert_equal 0, result
-  end
-
-
-
 end

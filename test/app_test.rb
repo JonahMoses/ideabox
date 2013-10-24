@@ -18,7 +18,7 @@ class AppTest < Minitest::Test
 
   def test_ideabox
     get '/'
-    assert (last_response.body =~ /Your Idea:/)
+    assert (last_response.body =~ /Welcome To IdeaBox/)
   end
 
 
