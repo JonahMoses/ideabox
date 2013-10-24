@@ -152,3 +152,45 @@ ideas:
   created_at: 2013-10-23 18:08:55.000000000 -06:00
   updated_at: 2013-10-23 18:08:55.000000000 -06:00
   group: working!
+- title: hello new idea
+  description: hi
+  rank: 0
+  tags: hey
+  created_at: 2013-10-23 18:16:31.000000000 -06:00
+  updated_at: 2013-10-23 18:16:31.000000000 -06:00
+  group: myowngroup
+- title: asdfsdaf
+  description: '`asdf'
+  rank: 0
+  tags: afg
+  created_at: 2013-10-23 18:18:00.000000000 -06:00
+  updated_at: 2013-10-23 18:18:00.000000000 -06:00
+  group: ag
+- title: khlg
+  description: gjhk
+  rank: 0
+  tags: ''
+  created_at: 2013-10-23 19:29:29.000000000 -06:00
+  updated_at: 2013-10-23 19:29:29.000000000 -06:00
+  group: searching
+- title: TESTING 123
+  description: ''
+  rank: 0
+  tags: '1'
+  created_at: 2013-10-23 19:39:43.000000000 -06:00
+  updated_at: 2013-10-23 19:39:43.000000000 -06:00
+  group: '1'
+- title: TESTING 567
+  description: ''
+  rank: 0
+  tags: ''
+  created_at: 2013-10-23 19:42:19.000000000 -06:00
+  updated_at: 2013-10-23 19:42:19.000000000 -06:00
+  group: ''
+- title: More ideas
+  description: '4252'
+  rank: 0
+  tags: '324'
+  created_at: 2013-10-23 19:44:33.000000000 -06:00
+  updated_at: 2013-10-23 19:44:33.000000000 -06:00
+  group: ok

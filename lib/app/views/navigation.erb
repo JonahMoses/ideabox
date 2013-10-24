@@ -23,13 +23,17 @@
             <a role="menuitem" tabindex="-1" href="/tags">View All Tags</a>
           </li>
           <li role="presentation" class="divider"></li>
-            <li role="presentation">
-              <% tags.each do |tag| %>
-                <a href="/tags/<%= tag %>" role="menuitem" tabindex="-1">
-                  <%= tag %>
-                </a>
-              <% end %>
-            </li>
+          <li role="presentation">
+            <% tags[0..14].each do |tag| %>
+              <a href="/tags/<%= tag %>" role="menuitem" tabindex="-1">
+                <%= tag %>
+              </a>
+            <% end %>
+          </li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="/tags">If 15+ Tags, View All</a>
+          </li>
         </ul>
       </li>
 
@@ -41,12 +45,16 @@
           </li>
           <li role="presentation" class="divider"></li>
           <li role="presentation">
-              <% groups.each do |group| %>
-                <a href="/groups/<%= group %>" role="menuitem" tabindex="-1">
-                  <%= group %>
-                </a>
-              <% end %>
-            </li>
+            <% groups[0..14].each do |group| %>
+              <a href="/groups/<%= group %>" role="menuitem" tabindex="-1">
+                <%= group %>
+              </a>
+            <% end %>
+          </li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation">
+            <a role="menuitem" tabindex="-1" href="/groups/all">If 15+ Groups, View All</a>
+          </li>
         </ul>
       </li>
 

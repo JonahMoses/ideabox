@@ -16,8 +16,8 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   post '/' do
-    idea = IdeaStore.create(params['idea'])
-    redirect "/#{idea.id}/info"
+    IdeaStore.create(params['idea'])
+    redirect "/#{IdeaStore.all.last.id}/info"
   end
 
   delete '/:id' do |id|
